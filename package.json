@@ -22,8 +22,8 @@
     "build-dev": "facade build -e ./src/index.js -n facade -o dist -w -p -b -f esm -l info"
   },
   "dependencies": {
-    "@steelskysoftware/facade-builder": "workspace:*",
-    "@steelskysoftware/facade-toolbox": "workspace:*",
+    "@steelskysoftware/facade-builder": "^1.0.0",
+    "@steelskysoftware/facade-toolbox": "^1.0.0",
     "virtual-dom": "^2.1.1"
   }
 }
