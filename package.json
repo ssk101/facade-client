@@ -1,0 +1,29 @@
+{
+  "name": "@steelskysoftware/facade-client",
+  "version": "1.0.0",
+  "author": "steelskysoftware",
+  "license": "ISC",
+  "type": "module",
+  "main": "dist/facade.js",
+  "module": "dist/facade.js",
+  "description": "Facade router, components, rendering engine, middlewares, models, services",
+  "bugs": {
+    "url": "https://github.com/steelskysoftware/facade-client/issues"
+  },
+  "homepage": "https://github.com/steelskysoftware/facade-client#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "engines": {
+    "node": ">= 18.0.0"
+  },
+  "scripts": {
+    "dist": "facade build -e ./src/index.js -n facade -o dist -m -b -d -f esm -l error",
+    "build-dev": "facade build -e ./src/index.js -n facade -o dist -w -p -b -f esm -l info"
+  },
+  "dependencies": {
+    "@steelskysoftware/facade-builder": "workspace:*",
+    "@steelskysoftware/facade-toolbox": "workspace:*",
+    "virtual-dom": "^2.1.1"
+  }
+}

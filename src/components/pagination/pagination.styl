@@ -1,0 +1,23 @@
+:host
+  display: grid
+  grid-auto-flow: column
+  grid-gap: var(--fa-pagination-gap, 1em)
+  padding: var(--fa-pagination-padding, 0)
+  box-sizing: border-box
+  justify-content: center
+  align-items: center
+
+:host([disabled="true"])
+  opacity: 0.5
+  pointer-events: none
+
+facade-button
+  display: flex
+  --fa-button-padding: var(--fa-pagination-button-padding, 1px 5px)
+  --fa-button-background: var(--fa-pagination-button-background, #fff)
+  --fa-button-color: var(--fa-pagination-button-color, #000)
+  --fa-button-font-size: var(--fa-pagination-button-font-size, 18px)
+
+.total
+  font-weight: 700
+

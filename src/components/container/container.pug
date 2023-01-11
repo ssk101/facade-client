@@ -1,0 +1,11 @@
+fa-sticky(stickied=this.stickyHeader)
+  header
+    slot(name='header')
+    fa-button#collapse((click)=this.collapse(), disabled=this.collapseDisabled)
+      button= this.collapsed ? '▼' : '▲'
+
+.scroll
+  if this.noData
+    h2.no-data No data
+  else
+    slot(name='scroll')

@@ -1,0 +1,57 @@
+:host
+  position: relative
+  background: var(--fa-container-background, var(--fa-primary-color))
+  color: var(--fa-container-color, var(--fa-primary-text))
+  border: var(--fa-container-border, var(--fa-border))
+  box-sizing: border-box
+  display: grid
+  grid-auto-rows: min-content auto
+
+:host([collapsed="true"])
+  .scroll
+    height: 0
+    overflow-y: hidden
+
+  header
+    font-style: italic
+    opacity: .5
+
+.no-data
+  text-align: center
+
+header
+  display: grid
+  grid-auto-flow: column
+  grid-auto-columns: 1fr auto
+  grid-gap: var(--fa-box-gap)
+  justify-content: space-between
+  align-items: center
+  padding: 0 10px
+  box-sizing: border-box
+  background: var(--fa-container-header-background, var(--fa-primary-color))
+  color: var(--fa-container-header-color, var(--fa-primary-text))
+
+::slotted([slot='header'])
+  display: grid
+  grid-auto-flow: column
+  grid-auto-columns: var(--fa-container-header-auto-columns, 1fr auto auto auto)
+  grid-gap: var(--fa-box-gap)
+  align-items: center
+  justify-content: space-between
+  padding: var(--fa-container-padding, var(--fa-padding) 0)
+  background: var(--fa-container-header-background, var(--fa-primary-color))
+  color: var(--fa-container-header-color, var(--fa-primary-text))
+
+fa-button#collapse
+  display: flex
+  --fa-button-padding: 0
+  --fa-button-background: #fff
+  --fa-button-color: #000
+  --fa-button-font-size: 20px
+
+  button
+    display: flex
+
+.scroll
+  height: 100%
+  overflow-y: auto

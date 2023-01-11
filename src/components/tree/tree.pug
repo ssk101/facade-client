@@ -1,0 +1,10 @@
+ul
+  each group, index in Object.entries(this.tree)
+    - const [groupName, items] = group
+    li((click)=this.toggleEdit(e, $index))
+      pre= `${groupName}`
+
+      if !this.state[groupName].collapsed
+        ul
+          each item in items
+            li= item.label

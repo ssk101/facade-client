@@ -1,0 +1,17 @@
+:host
+  display: block
+
+:host([changed]) ::slotted(input)
+  background: var(--fa-input-changed-background, #ffb74c)
+  color: var(--fa-input-changed-color, #000)
+  font-weight: var(--fa-input-changed-weight, 700)
+
+::slotted(input)
+  padding: var(--fa-input-padding, 2px 10px)
+  background: var(--fa-input-background, #FFF)
+  color: var(--fa-input-color, #000)
+  border-style: var(--fa-input-border-style, none)
+  padding: var(--fa-input-padding, 4px)
+  width: var(--fa-input-width, 100%)
+  height: var(--fa-input-height, auto)
+  box-sizing: border-box

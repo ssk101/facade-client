@@ -1,0 +1,35 @@
+:host
+  display: block
+
+:host(:not([disabled="true"]))
+  button
+    cursor: pointer
+
+:host([disabled="true"])
+  button
+    pointer-events: none
+    cursor: not-allowed
+    opacity: .25
+
+:host(:not([href]))
+  a
+    display: contents
+
+button
+  border: var(--fa-button-border, none)
+  margin: var(--fa-button-margin, none)
+  padding: var(--fa-button-padding, 4px 10px)
+  cursor: pointer
+  font-size: var(--fa-button-font-size, 13px)
+  border-radius: var(--fa-button-radius, var(--fa-border-radius))
+  background: var(--fa-button-background, #FFF)
+  color: var(--fa-button-color, #000)
+
+  a
+    text-decoration: none
+
+    &:visited
+      color: inherit
+
+  &:hover
+    filter: brightness(125%)
