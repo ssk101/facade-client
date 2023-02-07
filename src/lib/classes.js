@@ -14,9 +14,11 @@ export class FacadeComponent extends HTMLElement {
     if(this.$$created) return
     this.$$created = true
 
-    this.attachShadow({
-      mode: 'open',
-    })
+    if(!this.shadowRoot) {
+      this.attachShadow({
+        mode: 'open',
+      })
+    }
 
     this.created && this.created()
   }
