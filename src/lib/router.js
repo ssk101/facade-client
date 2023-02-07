@@ -42,7 +42,8 @@ const router = async () => {
 
   if(!route) return
 
-  const { default: component } = await route.component() || {}
+  const imported = await route.component()
+  const component = imported.default || imported
 
   if(!component) return
 
