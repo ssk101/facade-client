@@ -77,7 +77,10 @@ export function assignAttribute(attr, Type = String, Class, opts = {}) {
     const val = this.getAttribute(attr)
 
     if(val === null) {
-      this[camelCase(attr)] = opts.default
+      if(typeof opts.default === 'function') {
+        return opts.default(this)
+      }
+
       return opts.default
     }
 
@@ -114,12 +117,12 @@ export function assignAttribute(attr, Type = String, Class, opts = {}) {
     this.setAttribute(attr, val)
   }
 
-  const createdCallback = Class.prototype.createdCallback
+  const created = Class.prototype.created
 
-  Class.prototype.createdCallback = function() {
+  Class.prototype.created = function() {
     Object.defineProperty(this, camelCase(attr), {
       get, set,
     })
-    return createdCallback ? createdCallback.apply(this, arguments) : void 0
+    return created ? created.apply(this, arguments) : void 0
   }
 }
