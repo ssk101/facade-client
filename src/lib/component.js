@@ -73,6 +73,8 @@ function apply() {
 }
 
 export function assignAttribute(attr, Type = String, Class, opts = {}) {
+  var created = Class.prototype.created
+
   const get = function get() {
     const val = this.getAttribute(attr)
 
@@ -116,8 +118,6 @@ export function assignAttribute(attr, Type = String, Class, opts = {}) {
 
     this.setAttribute(attr, val)
   }
-
-  const created = Class.prototype.created
 
   Class.prototype.created = function() {
     Object.defineProperty(this, camelCase(attr), {

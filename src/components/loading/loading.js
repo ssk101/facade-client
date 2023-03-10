@@ -1,4 +1,3 @@
-import { FacadeComponent } from '../../lib/classes.js'
 import { Define, Attribute, Template, Styles } from '../../lib/decorators.js'
 import template from './loading.pug'
 import css from './loading.styl'
@@ -7,7 +6,7 @@ import css from './loading.styl'
 @Template(template)
 @Styles(css)
 @Attribute('loading-text', String)
-export default class Loading extends FacadeComponent {
+export default class Loading extends HTMLElement {
   async created() {
     this.observe(this, ['loading-text'], async() => {
       this.render()

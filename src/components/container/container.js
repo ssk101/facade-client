@@ -1,4 +1,3 @@
-import { FacadeComponent } from '../../lib/classes.js'
 import { Define, Attribute, Template, Styles } from '../../lib/decorators.js'
 import template from './container.pug'
 import css from './container.styl'
@@ -10,7 +9,7 @@ import '../sticky/sticky.js'
 @Attribute('no-data', Boolean)
 @Attribute('collapsed', Boolean)
 @Attribute('sticky-header', Boolean)
-export default class Container extends FacadeComponent {
+export default class Container extends HTMLElement {
   async created() {
     this.observe(this, ['no-data'], async() => {
       this.render()

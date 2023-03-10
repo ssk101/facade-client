@@ -1,4 +1,3 @@
-import { FacadeComponent } from '../../lib/classes.js'
 import { Define, Template, Styles, Attribute } from '../../lib/decorators.js'
 import css from './sticky.styl'
 import template from './sticky.pug'
@@ -7,7 +6,7 @@ import template from './sticky.pug'
 @Styles(css)
 @Template(template)
 @Attribute('stickied', Boolean)
-export default class Sticky extends FacadeComponent {
+export default class Sticky extends HTMLElement {
   connected() {
     if(!this.stickied) return
 

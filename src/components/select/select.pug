@@ -1,0 +1,15 @@
+select(
+  disabled=this.disabled,
+  (change)=this.select(e),
+)
+  if !this.noBlank
+    option(disabled, selected=this.value == null)
+      = this.placeholder ? this.placeholder : ''
+
+  each option in this.options
+    option(
+      value=option.value,
+      label=option.label,
+      disabled=option.disabled,
+      selected=this.value == option.value,
+    )= option.textContent

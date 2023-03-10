@@ -18,10 +18,6 @@ export async function bootstrap(options) {
 }
 
 export {
-  FacadeComponent,
-} from './lib/classes.js'
-
-export {
   Define,
   Template,
   Styles,
@@ -37,4 +33,4 @@ export {
 export { Model, model, Endpoint } from './lib/model.js'
 export { Api } from './services/api.js'
 export { emit, listen } from './services/event.js'
-export { h }
+export { h, HTMLElement as FacadeComponent }
