@@ -1,4 +1,3 @@
-import { FacadeComponent } from '../../lib/classes.js'
 import {
   Define,
   Template,
@@ -12,7 +11,7 @@ import css from './tree.styl'
 @Template(template)
 @Styles(css)
 @Input('tree', JSON, { default: {} })
-export default class Tree extends FacadeComponent {
+export default class Tree extends HTMLElement {
   connected() {
     this.state = Object.keys(this.tree).reduce((acc, groupName) => {
       acc[groupName] = { collapsed: false }

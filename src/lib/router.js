@@ -1,4 +1,5 @@
 const ROUTES = new Set()
+let initialized
 
 const rootPath = (path) => {
   return path.split('/').filter(p => p)[0]
@@ -37,13 +38,18 @@ const paramsFor = (route) => {
 }
 
 const router = async () => {
+  if(initialized) return
+  initialized = true
+
   const path = parseLocation()
   const route = findRouteByPath(path)
 
   if(!route) return
 
   const imported = await route.component()
-  const component = imported.default || imported
+  const component = imported.default || typeof imported === 'function'
+    ? imported()
+    : imported
 
   if(!component) return
 

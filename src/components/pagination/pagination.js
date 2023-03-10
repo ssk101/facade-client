@@ -1,4 +1,3 @@
-import { FacadeComponent } from '../../lib/classes.js'
 import { Define, Attribute, Template, Styles } from '../../lib/decorators.js'
 import  { clamp } from '@steelskysoftware/facade-toolbox'
 import template from './pagination.pug'
@@ -14,7 +13,7 @@ import '../button/button.js'
 @Attribute('display-total', Boolean)
 @Attribute('context', String)
 @Attribute('disabled', Boolean)
-export default class Pagination extends FacadeComponent {
+export default class Pagination extends HTMLElement {
   changePage(dir) {
     switch(dir) {
       case 'first': {
