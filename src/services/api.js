@@ -42,8 +42,9 @@ export class Api {
   async url(path, params) {
     let search
 
-    if(params) {
+    if(Object.keys(params || {}).length) {
       search = new URLSearchParams()
+
       for(const key in params) {
         if(typeof params[key] === 'object') {
           for(const v of params[key]) {

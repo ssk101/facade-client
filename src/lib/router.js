@@ -137,4 +137,3 @@ export const initRoutes = (routes) => {
 }
 
 window.addEventListener('hashchange', router)
-window.addEventListener('load', router)

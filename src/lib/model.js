@@ -20,7 +20,13 @@ export function Endpoint(endpoint) {
   const root = window.$facade.apiRoot || window.$facade.api || ''
 
   function getPath(path) {
-    return `${root}/${endpoint}/${path}`
+    return [
+      root,
+      endpoint,
+      path,
+    ]
+      .filter(part => part)
+      .join('/')
   }
 
   return function(Model) {
