@@ -24,6 +24,7 @@
   "dependencies": {
     "@steelskysoftware/facade-builder": "^1.0.0",
     "@steelskysoftware/facade-toolbox": "^1.0.0",
+    "idb": "^7.1.1",
     "virtual-dom": "^2.1.1"
   }
 }

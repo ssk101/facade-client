@@ -31,6 +31,7 @@ export {
 } from './lib/style.js'
 
 export { Model, model, Endpoint } from './lib/model.js'
+export { IDB } from './lib/idb.js'
 export { Api } from './services/api.js'
 export { emit, listen } from './services/event.js'
 export { h, HTMLElement as FacadeComponent }
