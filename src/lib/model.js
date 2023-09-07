@@ -34,8 +34,8 @@ export function Endpoint(endpoint) {
       return api.get(getPath(path), params)
     }
 
-    Model.post = async function(path, payload = {}) {
-      return api.post(getPath(path), payload)
+    Model.post = async function(path, payload = {}, headers) {
+      return api.post(getPath(path), payload, headers)
     }
 
     Model.prototype.load = Model.load

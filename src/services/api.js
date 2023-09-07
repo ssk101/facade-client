@@ -14,25 +14,23 @@ export class Api {
       return new Error(response.statusText)
     }
   }
-  async post(path, body, headers) {
+  async post(path, body, headers = {}) {
     const url = await this.url(path)
-    const data = {}
+    const defaultHeaders = {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    }
+
+    const isForm = body.constructor?.name === 'FormData'
+
+    const data = {
+      ...!isForm && { headers: Object.assign({}, defaultHeaders, headers) }
+    }
 
     if(body) {
       Object.assign(data, {
         method: 'POST',
-        body: JSON.stringify(body),
-      })
-    }
-
-    if(headers) {
-      Object.assign(data, { headers })
-    } else {
-      Object.assign(data, {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
+        body: isForm ? body : JSON.stringify(body),
       })
     }
 

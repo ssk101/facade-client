@@ -110,7 +110,7 @@ function register(tagName, Class, opts = {}) {
         options.detail = data.detail
         delete data.detail
       }
-      console.log({name, options, data})
+
       this.dispatchEvent(Object.assign(new CustomEvent(name, options), data))
       return this
     },

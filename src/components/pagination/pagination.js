@@ -14,7 +14,12 @@ import '../button/button.js'
 @Attribute('context', String)
 @Attribute('disabled', Boolean)
 export default class Pagination extends HTMLElement {
-  changePage(dir) {
+  changePage(e, dir) {
+    e.stopPropagation()
+    e.preventDefault()
+
+    if(e.constructor?.name === 'CustomEvent') return
+
     switch(dir) {
       case 'first': {
         this.page = 0
@@ -46,17 +51,6 @@ export default class Pagination extends HTMLElement {
     this.emit('fa:pagination', {
       context: this.context,
       page: this.page,
-    })
-  }
-
-  gotoPage(e) {
-    if(e.keyCode !== 13) return
-
-    let page = clamp(e.target.value - 1, 0, this.totalPages || Infinity)
-
-    this.emit('fa:pagination', {
-      context: this.context,
-      page,
     })
   }
 

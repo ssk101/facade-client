@@ -1,13 +1,13 @@
-facade-button((click)=this.changePage('first')) «
+facade-button((click)=this.changePage(e, 'first')) «
 
-facade-button((click)=this.changePage('prev')) ‹
+facade-button((click)=this.changePage(e, 'prev')) ‹
 
 span= `${this.page} / ${this.totalPages}`
 
 if this.displayTotal
   span.total= this.total
 
-facade-button((click)=this.changePage('next')) ›
+facade-button((click)=this.changePage(e, 'next')) ›
 
 if this.total
-  facade-button((click)=this.changePage('last')) »
+  facade-button((click)=this.changePage(e, 'last')) »

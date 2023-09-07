@@ -47,9 +47,15 @@ const router = async () => {
   if(!route) return
 
   const imported = await route.component()
-  const component = imported.default || typeof imported === 'function'
-    ? imported()
-    : imported
+  let component
+
+  if(typeof imported === 'function') {
+    component = imported()
+  } else if(typeof imported.default === 'function') {
+    component = imported.default()
+  } else {
+    component = imported
+  }
 
   if(!component) return
 
